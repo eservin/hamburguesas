@@ -22,5 +22,34 @@ class ColeccionDeHamburguesas {
     func obtenerHamburguesa () -> String {
         return hamburguesa[Int(arc4random())%hamburguesa.count]
     }
+
+}
+
+class Colores {
+    var rojoRandom : CGFloat = 0.0
+    var verdeRandom : CGFloat = 0.0
+    var azulRandom : CGFloat = 0.0
+    
+    var rojoInverso : CGFloat{
+        return 1 - rojoRandom
+    }
+    var verdeInverso : CGFloat{
+        return 1 - verdeRandom
+    }
+    var azulInverso : CGFloat{
+        return 1 - azulRandom
+    }
+    
+    func obtenerColor() -> UIColor {
+        rojoRandom = CGFloat(arc4random()%100) / 100
+        verdeRandom = CGFloat(arc4random()%100) / 100
+        azulRandom = CGFloat(arc4random()%100) / 100
+        
+        return UIColor(red: rojoRandom, green: verdeRandom, blue: azulRandom, alpha: 1)
+    }
+    
+    func obtenerColorInverso () -> UIColor {
+        return UIColor(red: rojoInverso, green: verdeInverso, blue: azulInverso, alpha: 1)
+    }
     
 }

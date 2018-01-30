@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var hamburguesaEtiqueta: UILabel!
     let hamburguesas = ColeccionDeHamburguesas()
     let paises = ColeccionDePaises()
+    let coloresRandom = Colores()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class ViewController: UIViewController {
     @IBAction func obtenerHamburguesa() {
         paisEtiqueta.text = paises.obtenerPais()
         hamburguesaEtiqueta.text = hamburguesas.obtenerHamburguesa()
+        view.backgroundColor = coloresRandom.obtenerColor()
+        view.tintColor = coloresRandom.obtenerColorInverso()
     }
     
 
